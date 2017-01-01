@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="UWPCustomFonts.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPCustomFonts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="10" >
+            <TextBlock Text="Using FontFamily in XAML" Style="{ThemeResource TitleTextBlockStyle}" />
+            <TextBlock Text="This is Arima Madurai Black" FontFamily="Assets/Fonts/ArimaMadurai-Black.ttf#Arima Madurai" Style="{ThemeResource SubtitleTextBlockStyle}" />
+            <TextBlock Text="Setting FontFamily in code" Style="{ThemeResource TitleTextBlockStyle}" />
+            <TextBlock x:Name="SetFontFamilyTextBlock" Text="This is Lato Hariline" Style="{ThemeResource SubtitleTextBlockStyle}" />
+            <TextBlock Text="DirectWrite cloud font" Style="{ThemeResource TitleTextBlockStyle}" />
+            <TextBlock FontFamily="FangSong" Text="This is FangSong" Style="{ThemeResource SubtitleTextBlockStyle}" />
+        </StackPanel>
+    </ScrollViewer>
+</Page>
