@@ -13,7 +13,7 @@
             <TextBlock Text="This is Arima Madurai Black" FontFamily="Assets/Fonts/ArimaMadurai-Black.ttf#Arima Madurai" Style="{ThemeResource SubtitleTextBlockStyle}" />
             <TextBlock Text="Setting FontFamily in code" Style="{ThemeResource TitleTextBlockStyle}" />
             <TextBlock x:Name="SetFontFamilyTextBlock" Text="This is Lato Hariline" Style="{ThemeResource SubtitleTextBlockStyle}" />
-            <TextBlock Text="DirectWrite cloud font" Style="{ThemeResource TitleTextBlockStyle}" />
+            <TextBlock Text="DirectWrite cloud font" FontFamily="Assets/Fonts/Airstream-webfont.eot#Airstream" Style="{ThemeResource TitleTextBlockStyle}" />
             <TextBlock FontFamily="FangSong" Text="This is FangSong" Style="{ThemeResource SubtitleTextBlockStyle}" />
         </StackPanel>
     </ScrollViewer>

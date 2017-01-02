@@ -92,6 +92,7 @@
     <Content Include="Assets\Fonts\ArimaMadurai-Black.ttf" />
     <Content Include="Assets\Fonts\Lato-Hairline.ttf" />
     <Content Include="Assets\Fonts\Merriweather-Black.ttf" />
+    <Content Include="Assets\Fonts\FoglihtenNo07.otf" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
