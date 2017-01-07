@@ -8,8 +8,8 @@ namespace BuilderWithInheritance.Games
 {
     class LocalGame : Game
     {
-        public LocalGame( int aiStrength, int boardSize, int handicapValue ) 
-            : base( boardSize, handicapValue )
+        public LocalGame( int aiStrength, int boardSize, int level ) 
+            : base( boardSize, level )
         {
             AiStrength = aiStrength;
         }

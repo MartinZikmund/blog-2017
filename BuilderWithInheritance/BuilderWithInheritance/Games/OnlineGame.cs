@@ -8,8 +8,8 @@ namespace BuilderWithInheritance.Games
 {
     class OnlineGame : Game
     {
-        public OnlineGame( string serverUrl, int boardSize, int handicapValue) 
-            : base(boardSize, handicapValue)
+        public OnlineGame(string serverUrl, int boardSize, int level)
+            : base(boardSize, level)
         {
             ServerUrl = serverUrl;
         }

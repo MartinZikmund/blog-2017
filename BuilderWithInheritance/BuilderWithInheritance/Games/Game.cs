@@ -8,14 +8,14 @@ namespace BuilderWithInheritance
 {
     abstract class Game
     {
-        public Game( int boardSize, int handicapValue )
+        public Game( int boardSize, int level )
         {
             BoardSize = boardSize;
-            HandicapValue = handicapValue;
+            Level = level;
         }
 
         public int BoardSize { get; }
 
-        public int HandicapValue { get; }
+        public int Level { get; }
     }
 }

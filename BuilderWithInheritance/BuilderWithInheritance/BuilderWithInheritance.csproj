@@ -43,20 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CuriousGenerics\LocalGameBuilder.cs" />
+    <Compile Include="CuriousGenerics\OnlineGameBuilder.cs" />
+    <Compile Include="CuriousGenerics\Usage.cs" />
     <Compile Include="Games\Game.cs" />
     <Compile Include="Games\LocalGame.cs" />
     <Compile Include="Games\OnlineGame.cs" />
-    <Compile Include="Simple\GameBuilder.cs" />
+    <Compile Include="CuriousGenerics\GameBuilder.cs" />
+    <Compile Include="Generics\GameBuilder.cs" />
+    <Compile Include="Generics\LocalGameBuilder.cs" />
+    <Compile Include="Generics\OnlineGameBuilder.cs" />
+    <Compile Include="Generics\Usage.cs" />
+    <Compile Include="NonGeneric\GameBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Simple\OnlineGameBuilder.cs" />
+    <Compile Include="NonGeneric\LocalGameBuilder.cs" />
+    <Compile Include="NonGeneric\OnlineGameBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Generics\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

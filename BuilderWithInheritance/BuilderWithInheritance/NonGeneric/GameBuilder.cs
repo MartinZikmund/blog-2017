@@ -4,22 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuilderWithInheritance
+namespace BuilderWithInheritance.NonGeneric
 {
     abstract class GameBuilder
     {
         protected int _boardSize = 8;
-        protected int _handicapValue = 1;
+        protected int _level = 1;
 
-        public GameBuilder SetBoardSize( int boardSize)
+        public GameBuilder BoardSize( int boardSize)
         {            
             _boardSize = boardSize;
             return this;
         }
 
-        public GameBuilder SetHandicap(int handicapValue)
+        public GameBuilder Level(int level)
         {            
-            _handicapValue = handicapValue;
+            _level = level;
             return this;
         }
 
