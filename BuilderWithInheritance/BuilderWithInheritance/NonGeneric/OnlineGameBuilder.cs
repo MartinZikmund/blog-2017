@@ -11,7 +11,7 @@ namespace BuilderWithInheritance.NonGeneric
     {
         private string _serverUrl = "http://example.com/";
 
-        public OnlineGameBuilder ServerUrl( string serverUrl)
+        public OnlineGameBuilder ServerUrl(string serverUrl)
         {
             _serverUrl = serverUrl;
             return this;

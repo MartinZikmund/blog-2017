@@ -11,14 +11,14 @@ namespace BuilderWithInheritance.NonGeneric
         protected int _boardSize = 8;
         protected int _level = 1;
 
-        public GameBuilder BoardSize( int boardSize)
-        {            
+        public GameBuilder BoardSize(int boardSize)
+        {
             _boardSize = boardSize;
             return this;
         }
 
         public GameBuilder Level(int level)
-        {            
+        {
             _level = level;
             return this;
         }

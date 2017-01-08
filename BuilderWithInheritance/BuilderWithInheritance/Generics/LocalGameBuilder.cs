@@ -19,6 +19,6 @@ namespace BuilderWithInheritance.Generics
 
         //now only LocalGame can be built by LocalGameBuilder
         public override LocalGame Build() =>
-            new LocalGame( _aiStrength, _boardSize, _level);
+            new LocalGame(_aiStrength, _boardSize, _level);
     }
 }

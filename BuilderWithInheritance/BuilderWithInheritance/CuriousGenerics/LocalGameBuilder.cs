@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace BuilderWithInheritance.CuriousGenerics
 {
-class LocalGameBuilder : GameBuilder<LocalGame, LocalGameBuilder>
-{
-    private int _aiStrength = 3;
-
-    protected override LocalGameBuilder BuilderInstance => this;
-
-    public LocalGameBuilder AiStrength(int aiStrength)
+    class LocalGameBuilder : GameBuilder<LocalGame, LocalGameBuilder>
     {
-        _aiStrength = aiStrength;
-        return this;
-    }
+        private int _aiStrength = 3;
 
-    //now only LocalGame can be built by LocalGameBuilder
-    public override LocalGame Build() =>
-        new LocalGame(_aiStrength, _boardSize, _level);
-}
+        //protected override LocalGameBuilder BuilderInstance => this;
+
+        public LocalGameBuilder AiStrength(int aiStrength)
+        {
+            _aiStrength = aiStrength;
+            return this;
+        }
+
+        //now only LocalGame can be built by LocalGameBuilder
+        public override LocalGame Build() =>
+            new LocalGame(_aiStrength, _boardSize, _level);
+    }
 }

@@ -10,6 +10,7 @@ namespace BuilderWithInheritance
     {
         static void Main(string[] args)
         {
+            CuriousGenerics.Usage.Example();
         }
     }
 }

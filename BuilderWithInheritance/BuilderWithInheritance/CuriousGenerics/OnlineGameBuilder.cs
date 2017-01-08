@@ -11,7 +11,7 @@ namespace BuilderWithInheritance.CuriousGenerics
     {
         private string _serverUrl = "http://example.com/";
 
-        protected override OnlineGameBuilder BuilderInstance => this;
+        //protected override OnlineGameBuilder BuilderInstance => this;
 
         public OnlineGameBuilder ServerUrl(string serverUrl)
         {

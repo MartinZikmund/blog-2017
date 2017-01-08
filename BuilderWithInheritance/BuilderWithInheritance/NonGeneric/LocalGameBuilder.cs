@@ -19,6 +19,6 @@ namespace BuilderWithInheritance.NonGeneric
 
         //this should not be allowed!
         public override Game Build() =>
-            new OnlineGame("INVALID", _boardSize, _level); 
+            new OnlineGame("INVALID", _boardSize, _level);
     }
 }

@@ -10,7 +10,7 @@ namespace BuilderWithInheritance.Generics
     public static class Usage
     {
         public static void Example()
-        {             
+        {
             OnlineGame onlineGame = new OnlineGameBuilder().
                 ServerUrl("http://new.com").
                 Level(12).
