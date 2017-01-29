@@ -43,11 +43,13 @@ namespace AccentColorChangeHandling
         private void ColorValuesChanged(UISettings sender, object args)
         {
             var accentColor = sender.GetColorValue(UIColorType.Accent);
-            var backgroundColor = sender.GetColorValue(UIColorType.Background);
-            var darkMode = backgroundColor == Colors.Black;
             //OR
             //Color accentColor = (Color)Resources["SystemAccentColor"];
-            ChangeLog.Insert(0, new ChangeLogItem(accentColor, darkMode, DateTimeOffset.Now));
+
+            var backgroundColor = sender.GetColorValue(UIColorType.Background);
+            var isDarkMode = backgroundColor == Colors.Black;
+
+            ChangeLog.Insert(0, new ChangeLogItem(accentColor, isDarkMode, DateTimeOffset.Now));
 
             //Example - update title bar
             UpdateTitleBar(accentColor);
