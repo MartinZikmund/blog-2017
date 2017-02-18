@@ -9,7 +9,7 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Button>
+    <Button x:Name="Button">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState>
@@ -18,7 +18,7 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="TargetText.Text" Value="This is never applied because the other Setter has invalid syntax" />
-                        <Setter Target="TargetText.Foreground" Value="???" />
+                        <Setter Target="Button.Background" Value="???" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
