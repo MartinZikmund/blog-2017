@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="UWPListItemStretch.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPListItemStretch"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="ListItemTemplate" x:DataType="local:ListItem">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.Background>
+                    <SolidColorBrush Color="{x:Bind Color}" />
+                </Grid.Background>
+                <TextBlock Text="{x:Bind Text}" TextAlignment="Center" Margin="12" />
+            </Grid>
+        </DataTemplate>
+        <Style x:Key="ListViewItemStretchStyle" TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+        <Style x:Key="ListBoxItemStretchStyle" TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+    </Page.Resources>
+    <Border Padding="12" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="ListView" Style="{StaticResource TitleTextBlockStyle}" />
+                <ListView ItemTemplate="{StaticResource ListItemTemplate}" ItemsSource="{x:Bind SampleItems}" Height="200" />
+                <TextBlock Text="ListBox" Style="{StaticResource TitleTextBlockStyle}" />
+                <ListBox ItemTemplate="{StaticResource ListItemTemplate}" ItemsSource="{x:Bind SampleItems}" Height="300" />
+                <TextBlock Text="ItemsControl" Style="{StaticResource TitleTextBlockStyle}" />
+                <ItemsControl ItemTemplate="{StaticResource ListItemTemplate}" ItemsSource="{x:Bind SampleItems}" Height="250" />
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="ListView with stretch" Style="{StaticResource TitleTextBlockStyle}" />
+                <ListView ItemTemplate="{StaticResource ListItemTemplate}" ItemsSource="{x:Bind SampleItems}" Height="200" ItemContainerStyle="{StaticResource ListViewItemStretchStyle}" />
+                <TextBlock Text="ListBox with stretch" Style="{StaticResource TitleTextBlockStyle}" />
+                <ListBox ItemTemplate="{StaticResource ListItemTemplate}" ItemsSource="{x:Bind SampleItems}" Height="300" ItemContainerStyle="{StaticResource ListBoxItemStretchStyle}" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>
