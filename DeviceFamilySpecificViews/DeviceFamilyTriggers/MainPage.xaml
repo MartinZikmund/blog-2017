@@ -26,18 +26,67 @@
                         <Setter Target="DesktopText.Visibility" Value="Visible" />
                     </VisualState.Setters>
                 </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <windowsStateTriggers:DeviceFamilyStateTrigger TargetDeviceFamily="Mobile" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MobileText.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <windowsStateTriggers:DeviceFamilyStateTrigger TargetDeviceFamily="Xbox" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="XboxText.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <windowsStateTriggers:DeviceFamilyStateTrigger TargetDeviceFamily="Team" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TeamText.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <windowsStateTriggers:DeviceFamilyStateTrigger TargetDeviceFamily="IoT" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="IoTText.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <windowsStateTriggers:DeviceFamilyStateTrigger TargetDeviceFamily="Holographic" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HolographicText.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <windowsStateTriggers:DeviceFamilyStateTrigger TargetDeviceFamily="Unidentified" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="UnidentifiedText.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Text="Current device family" FontWeight="Bold" HorizontalAlignment="Center" Margin="20" /> 
+        <TextBlock Text="Current device family" FontWeight="Bold" HorizontalAlignment="Center" Margin="20" />
         <TextBlock x:Name="DesktopText" Text="Desktop" Style="{StaticResource DeviceFamilyText}"  />
         <TextBlock x:Name="MobileText" Text="Mobile" Style="{StaticResource DeviceFamilyText}" />
         <TextBlock x:Name="XboxText" Text="Xbox" Style="{StaticResource DeviceFamilyText}" />
-        <TextBlock x:Name="IoTText" Text="IoT" Style="{StaticResource DeviceFamilyText}" />
-        <TextBlock x:Name="UnidentifiedText" Text="Unidentified" Style="{StaticResource DeviceFamilyText}" />
         <TextBlock x:Name="TeamText" Text="Team" Style="{StaticResource DeviceFamilyText}" />
+        <TextBlock x:Name="IoTText" Text="IoT" Style="{StaticResource DeviceFamilyText}" />
+        <TextBlock x:Name="HolographicText" Text="Holographic" Style="{StaticResource DeviceFamilyText}" />
+        <TextBlock x:Name="UnidentifiedText" Text="Unidentified" Style="{StaticResource DeviceFamilyText}" />
     </Grid>
 </Page>
