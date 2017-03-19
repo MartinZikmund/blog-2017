@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="DeviceFamilyTriggers.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DeviceFamilyTriggers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:windowsStateTriggers="using:DeviceFamilyTriggers.WindowsStateTriggers"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style x:Key="DeviceFamilyText" TargetType="TextBlock" BasedOn="{StaticResource TitleTextBlockStyle}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Grid.Row" Value="1" />
+            <Setter Property="Visibility" Value="Collapsed" />
+        </Style>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <windowsStateTriggers:DeviceFamilyStateTrigger TargetDeviceFamily="Desktop" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="DesktopText.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Current device family" FontWeight="Bold" HorizontalAlignment="Center" Margin="20" /> 
+        <TextBlock x:Name="DesktopText" Text="Desktop" Style="{StaticResource DeviceFamilyText}"  />
+        <TextBlock x:Name="MobileText" Text="Mobile" Style="{StaticResource DeviceFamilyText}" />
+        <TextBlock x:Name="XboxText" Text="Xbox" Style="{StaticResource DeviceFamilyText}" />
+        <TextBlock x:Name="IoTText" Text="IoT" Style="{StaticResource DeviceFamilyText}" />
+        <TextBlock x:Name="UnidentifiedText" Text="Unidentified" Style="{StaticResource DeviceFamilyText}" />
+        <TextBlock x:Name="TeamText" Text="Team" Style="{StaticResource DeviceFamilyText}" />
+    </Grid>
+</Page>
