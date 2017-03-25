@@ -13,8 +13,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Main page" Margin="20" Style="{ThemeResource HeaderTextBlockStyle}" />
-        <Button Width="300" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,62.286,30,220" Grid.Row="1">Go to login page</Button>
+        <TextBlock Text="Login page" Margin="20" Style="{ThemeResource HeaderTextBlockStyle}" />
+        <Button Width="300" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Command="{x:Bind Model.GoToUserAreaCommand}">Go to user area &amp; pop backstack</Button>
     </Grid>
 </views:MvxWindowsPage>
 

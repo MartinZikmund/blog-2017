@@ -11,10 +11,16 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Main page" Margin="20" Style="{ThemeResource HeaderTextBlockStyle}" />
-        <Button Width="300" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,62.286,30,220" Grid.Row="1">Go to login page</Button>
+        <TextBlock Margin="20" Style="{ThemeResource HeaderTextBlockStyle}">
+            <Run>User area page </Run>
+            <Run Text="{x:Bind Model.PageOrder}" />
+        </TextBlock>
+        <Button Width="300" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Command="{x:Bind Model.ShowMoreCommand}">Show next</Button>
+        <Button Width="300" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Command="{x:Bind Model.GoHomeCommand}">Jump home &amp; clear backstack</Button>
     </Grid>
 </views:MvxWindowsPage>
 
