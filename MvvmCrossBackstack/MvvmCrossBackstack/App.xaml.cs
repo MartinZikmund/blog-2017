@@ -66,6 +66,8 @@ namespace MvvmCrossBackstack
             {
                 if (_rootFrame.Content == null)
                 {
+                    _rootFrame.Navigated += _rootFrame_Navigated;
+
                     var setup = new Setup(_rootFrame);
                     setup.Initialize();
 
@@ -79,7 +81,12 @@ namespace MvvmCrossBackstack
             SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
         }
 
-
+        private void _rootFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+                _rootFrame.CanGoBack ? AppViewBackButtonVisibility.Visible :
+            AppViewBackButtonVisibility.Collapsed;            
+        }
 
         private void App_BackRequested(object sender, BackRequestedEventArgs e)
         {

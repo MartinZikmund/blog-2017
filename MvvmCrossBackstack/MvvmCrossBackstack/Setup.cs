@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Core.Views;
 using MvvmCross.Platform.Platform;
 using MvvmCross.WindowsUWP.Platform;
 using MvvmCross.WindowsUWP.Views;
+using MvvmCrossBackstack.Core.PresentationHints;
 
 namespace MvvmCrossBackstack
 {
@@ -29,8 +31,11 @@ namespace MvvmCrossBackstack
 
         protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)
         {
-            return new CustomViewPresenter(rootFrame);
+            var viewPresenter = base.CreateViewPresenter(rootFrame);
+            var backStackHandler = new BackStackHintHandler(rootFrame);
+            viewPresenter.AddPresentationHintHandler<ClearBackstackHint>(backStackHandler.HandleClearBackstackHint);
+            viewPresenter.AddPresentationHintHandler<PopBackstackHint>(backStackHandler.HandlePopBackstackHint);
+            return viewPresenter;
         }
     }
-
 }

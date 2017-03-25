@@ -34,7 +34,7 @@ namespace MvvmCrossBackstack.Core.ViewModels
         {
             //navigate to main page
             ShowViewModel<MainViewModel>();
-            //clear the whole back stack
+            //clear the whole back stack            
             ChangePresentation(new ClearBackstackHint());
         }
 
