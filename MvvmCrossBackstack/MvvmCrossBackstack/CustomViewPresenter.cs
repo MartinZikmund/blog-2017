@@ -54,7 +54,7 @@ namespace MvvmCrossBackstack
         {
             if (_frame.CanGoBack)
             {
-                _frame.BackStack.RemoveAt(_frame.BackStack.Count - 1);
+                _frame.BackStack.RemoveAt(_frame.BackStackDepth - 1);
                 UpdateBackButtonVisibility();
             }
         }
