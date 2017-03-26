@@ -12,7 +12,7 @@ using MvvmCrossBackstack.Core.PresentationHints;
 namespace MvvmCrossBackstack
 {
     /// <summary>
-    /// Handles presentation hints
+    /// Handles back stack presentation hints
     /// </summary>
     public class BackStackHintHandler
     {
