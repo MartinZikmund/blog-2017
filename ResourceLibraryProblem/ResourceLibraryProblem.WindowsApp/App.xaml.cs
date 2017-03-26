@@ -30,7 +30,7 @@ namespace ResourceLibraryProblem.WindowsApp
         public App()
         {
             this.InitializeComponent();
-            
+            CultureInfo.CurrentUICulture = new CultureInfo("cs");
             this.Suspending += OnSuspending;
         }
 
