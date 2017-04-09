@@ -11,25 +11,29 @@
     mc:Ignorable="d">
     <Page.Resources>
         <ItemsPanelTemplate x:Key="HorizontalPanel">
-            <VirtualizingStackPanel Orientation="Horizontal" />
+            <VirtualizingStackPanel HorizontalAlignment="Center" Orientation="Horizontal" />
         </ItemsPanelTemplate>
     </Page.Resources>
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="OsVersion" HorizontalAlignment="Center" Style="{ThemeResource HeaderTextBlockStyle}" />
         <TextBlock Text="Storyboard in DataTemplate" HorizontalAlignment="Center" Style="{ThemeResource TitleTextBlockStyle}" Margin="10" />
         <ListView ItemsPanel="{StaticResource HorizontalPanel}" ItemsSource="{x:Bind Items}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Width="100" Height="100" x:Name="Container">
-                        <Grid.Background>
+                    <Border BorderBrush="Black" BorderThickness="1" Width="100" Height="100" x:Name="Container">
+                        <Border.Background>
                             <SolidColorBrush Color="Transparent" />
-                        </Grid.Background>
-                        <Grid.Resources>
+                        </Border.Background>
+                        <Border.Resources>
                             <Storyboard x:Key="BlinkingAnimation" RepeatBehavior="Forever" AutoReverse="True">
                                 <ColorAnimation Duration="0:0:1" To="Red" Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Container">
                                 </ColorAnimation>
                             </Storyboard>
-                        </Grid.Resources>
-                        <TextBlock Text="{Binding IsAnimating}" />
+                        </Border.Resources>
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="Is animating:" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding IsAnimating}" />
+                        </StackPanel>
                         <interactivity:Interaction.Behaviors>
                             <core:DataTriggerBehavior 
                                 Binding="{Binding IsAnimating, Mode=OneWay}" 
@@ -44,12 +48,17 @@
                                 <media:ControlStoryboardAction ControlStoryboardOption="Stop" Storyboard="{StaticResource BlinkingAnimation}" />
                             </core:DataTriggerBehavior>
                         </interactivity:Interaction.Behaviors>
-                    </Grid>
+                    </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <TextBlock Text="Storyboard in UserControl" HorizontalAlignment="Center" Style="{ThemeResource TitleTextBlockStyle}" Margin="10" />
         <ListView ItemsPanel="{StaticResource HorizontalPanel}" ItemsSource="{x:Bind Items}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:AnimationItemControl />
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <Button Content="Animate third item" Margin="10" HorizontalAlignment="Center" Click="ButtonBase_OnClick" />
     </StackPanel>
