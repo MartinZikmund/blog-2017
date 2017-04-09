@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="NotAllTransparentAreEqual.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NotAllTransparentAreEqual"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Storyboard x:Name="BlinkingDefaultStoryboard" RepeatBehavior="Forever" AutoReverse="True">
+            <ColorAnimation Duration="0:0:3" To="White" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="WhiteRectangleDefault" d:IsOptimized="True"/>
+            <ColorAnimation Duration="0:0:3" To="Black" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="BlackRectangleDefault" d:IsOptimized="True"/>
+        </Storyboard>
+        <Storyboard x:Name="BlinkingSpecificStoryboard" RepeatBehavior="Forever" AutoReverse="True">
+            <ColorAnimation Duration="0:0:3" To="White" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="WhiteRectangleSpecific" d:IsOptimized="True"/>
+            <ColorAnimation Duration="0:0:3" To="Black" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="BlackRectangleSpecific" d:IsOptimized="True"/>
+        </Storyboard>
+    </Page.Resources>
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Margin="10" Text="Using 'Transparent'" Style="{ThemeResource TitleTextBlockStyle}" HorizontalAlignment="Center" />
+        <Grid Background="DarkBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle x:Name="WhiteRectangleDefault" Stroke="GreenYellow" StrokeThickness="2" Width="100" Height="100">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Transparent" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="BlackRectangleDefault" Stroke="GreenYellow" StrokeThickness="2" Width="100" Height="100" Grid.Column="1">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Transparent" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+        <TextBlock Text="The right rectangle should animate from transparent color to black, but because transparent is acutally a transparent white color, you can see that the rectangle is semi-white in the during the animation" TextWrapping="Wrap" TextAlignment="Center" Margin="10" />
+        <TextBlock Margin="10" Text="Using specific color" Style="{ThemeResource TitleTextBlockStyle}" HorizontalAlignment="Center" />
+        <Grid Background="DarkBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle x:Name="WhiteRectangleSpecific" Stroke="GreenYellow" StrokeThickness="2" Width="100" Height="100">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#00FFFFFF" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="BlackRectangleSpecific" Stroke="GreenYellow" StrokeThickness="2" Width="100" Height="100" Grid.Column="1">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#00000000" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+        <TextBlock Text="Here the animation behaves as we wanted." TextWrapping="Wrap" TextAlignment="Center" Margin="10" />
+    </StackPanel>
+</Page>
