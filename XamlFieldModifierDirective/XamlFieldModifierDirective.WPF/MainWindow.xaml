@@ -9,7 +9,7 @@
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button HorizontalAlignment="Center" Click="ChangeTexts" Margin="10">Change texts</Button>
-            <TextBlock HorizontalAlignment="Center" Margin="10" x:Name="InaccessibleTextBlock" Text="Inaccessible from outside" />
+            <TextBlock x:FieldModifier="private" HorizontalAlignment="Center" Margin="10" x:Name="InaccessibleTextBlock" Text="Inaccessible from outside" />
             <TextBlock x:FieldModifier="public" HorizontalAlignment="Center"  Margin="10" x:Name="AccessibleTextBlock"  Text="Accessible from outside" />
         </StackPanel>
     </Grid>

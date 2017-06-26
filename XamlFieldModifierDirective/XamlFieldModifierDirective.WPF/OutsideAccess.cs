@@ -10,7 +10,7 @@ namespace XamlFieldModifierDirective.WPF
     {
         public static void ChangeTexts(MainWindow window)
         {
-            window.InaccessibleTextBlock.Text = "Accessed";
+            //window.InaccessibleTextBlock.Text = "Accessed";
             window.AccessibleTextBlock.Text = "Accessed";
         }
     }
