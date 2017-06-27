@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="KeyStateTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KeyStateTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="StateStyle">
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Ctrl" Style="{ThemeResource HeaderTextBlockStyle}" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="CtrlStateTextBlock" Style="{ThemeResource StateStyle}" Grid.Row="1" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Caps Lock" Style="{ThemeResource HeaderTextBlockStyle}" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="CapsLockStateTextBlock" Style="{ThemeResource StateStyle}" Grid.Row="1" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="'A' key" Style="{ThemeResource HeaderTextBlockStyle}" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="AStateTextBlock" Style="{ThemeResource StateStyle}" Grid.Row="1" />
+        </Grid>
+    </Grid>
+</Page>
